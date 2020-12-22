@@ -9,14 +9,22 @@ class App extends Component {
       {name: 'Hannah', age: 22},
       {name: 'Kyeonghee', age: 50},
       {name: 'Sogeum', age: 3}
-    ]
+    ],
+    otherState: 'Something random'
   }
 
   //handler라는 이름을 붙여주면 이벤트 핸들러로 따라오는 함수임을 알 수 있기 때문에 이렇게 짓는 것이 컨벤션
   switchNameHandler = () => {
     //console.log("Was clicked!");
     //DON'T: this.state.persons[0].name = "박현아";
-    this.setState({})
+    //React에서 무엇이 바뀌었는지 스스로 감지해서 업데이트를 한다.
+    this.setState({
+      persons: [
+        {name: '박현아', age: 22},
+        {name: 'Kyeonghee', age: 50},
+        {name: 'Sogeum', age: 4}
+      ]
+    })
   }
 
   render() {
